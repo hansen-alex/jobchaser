@@ -5,6 +5,7 @@
   padding: 0;
   border: 0;
   margin: 0;
+  list-style: none;
 }
 
 body {
@@ -16,4 +17,56 @@ body {
 button,
 a {
   cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    max-width: 425px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2560px;
+  }
 }

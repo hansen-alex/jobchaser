@@ -1,3 +1,4 @@
+import "./JobPosts.css";
 import { JobPost } from "./JobPost";
 import { JobPostData } from "./data";
 
@@ -9,7 +10,7 @@ export const JobPosts = ({ jobPosts }: JobPostsProps) => {
   console.log(jobPosts);
 
   return (
-    <ul>
+    <ul className="job-posts">
       {jobPosts &&
         jobPosts.map((jobPost: JobPostData) => {
           return (

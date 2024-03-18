@@ -1,0 +1,39 @@
+.job-posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  /* max-width: 1024px; */
+  padding: 1rem 0;
+}
+
+@media (min-width: 375px) {
+}
+
+@media (min-width: 425px) {
+}
+
+@media (min-width: 768px) {
+  .job-posts {
+    max-width: 768px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1440px) {
+  .job-posts {
+    max-width: 1440px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1920px) {
+}
+
+@media (min-width: 2560px) {
+}
