@@ -1,10 +1,15 @@
-import { jobs } from "./data.ts";
 import "./App.css";
+import { jobs } from "./data.ts";
+import { JobPosts } from "./JobPosts.tsx";
 
 function App() {
-  console.log(jobs);
+  // console.log(jobs);
 
-  return <></>;
+  return (
+    <>
+      <JobPosts jobPosts={jobs} />
+    </>
+  );
 }
 
 export default App;
