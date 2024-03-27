@@ -1,44 +1,47 @@
-import "./JobPost.css";
+import style from "./JobPost.module.css";
 import { JobPostData } from "./data";
 
 interface JobPostProps {
-  jobPost: JobPostData;
+  jobPostData: JobPostData;
 }
 
-export const JobPost = ({ jobPost }: JobPostProps) => {
+export const JobPost = ({ jobPostData }: JobPostProps) => {
   return (
-    <li className="job-post">
-      <div className="company-post-info">
-        <div className="company-info">
-          {jobPost.logo && (
-            <img src={jobPost.logo} alt={`${jobPost.company} logo`} />
+    <li className={style.jobPost}>
+      <div className={style.companyPostInfo}>
+        <div className={style.companyInfo}>
+          {jobPostData.logo && (
+            <img src={jobPostData.logo} alt={`${jobPostData.company} logo`} />
           )}
-          {jobPost.company && <p>{jobPost.company}</p>}
+          {jobPostData.company && <p>{jobPostData.company}</p>}
         </div>
-        <div className="location-posted-at">
-          {jobPost.location && <p>{jobPost.location}</p>}
-          {jobPost.postedAt && <p>{jobPost.postedAt}</p>}
+        <div className={style.locationPostedAt}>
+          {jobPostData.location && <p>{jobPostData.location}</p>}
+          {jobPostData.postedAt && <p>{jobPostData.postedAt}</p>}
         </div>
       </div>
-      <div className="job-info">
-        <div className="position-info">
+      <div className={style.jobInfo}>
+        <div className={style.positionInfo}>
           <h3>Position</h3>
-          {jobPost.position && <p>{jobPost.position}</p>}
-          {jobPost.level && <p>{jobPost.level}</p>}
-          {jobPost.role && <p>{jobPost.role}</p>}
-          {jobPost.contract && <p>{jobPost.contract}</p>}
+          {jobPostData.position && <p>{jobPostData.position}</p>}
+          {jobPostData.level && <p>{jobPostData.level}</p>}
+          {jobPostData.role && <p>{jobPostData.role}</p>}
+          {jobPostData.contract && <p>{jobPostData.contract}</p>}
         </div>
-        <div className="requirements">
-          {((jobPost.languages && jobPost.languages.length > 0) ||
-            (jobPost.tools && jobPost.tools.length > 0)) && (
+        <div className={style.requirements}>
+          {((jobPostData.languages && jobPostData.languages.length > 0) ||
+            (jobPostData.tools && jobPostData.tools.length > 0)) && (
             <h3>Requirements</h3>
           )}
-          {jobPost.languages && jobPost.languages.length > 0 && (
+          {jobPostData.languages && jobPostData.languages.length > 0 && (
             <ul>
-              {jobPost.languages.map((language) => (
+              {jobPostData.languages.map((language) => (
                 <li
                   key={
-                    jobPost.id + jobPost.company + jobPost.position + language
+                    jobPostData.id +
+                    jobPostData.company +
+                    jobPostData.position +
+                    language
                   }
                 >
                   {language}
@@ -46,11 +49,16 @@ export const JobPost = ({ jobPost }: JobPostProps) => {
               ))}
             </ul>
           )}
-          {jobPost.tools && jobPost.tools.length > 0 && (
+          {jobPostData.tools && jobPostData.tools.length > 0 && (
             <ul>
-              {jobPost.tools.map((tool) => (
+              {jobPostData.tools.map((tool) => (
                 <li
-                  key={jobPost.id + jobPost.company + jobPost.position + tool}
+                  key={
+                    jobPostData.id +
+                    jobPostData.company +
+                    jobPostData.position +
+                    tool
+                  }
                 >
                   {tool}
                 </li>

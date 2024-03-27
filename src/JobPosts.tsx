@@ -1,23 +1,23 @@
-import "./JobPosts.css";
+import style from "./JobPosts.module.css";
 import { JobPost } from "./JobPost";
 import { JobPostData } from "./data";
 
 interface JobPostsProps {
-  jobPosts: JobPostData[];
+  jobPostsData: JobPostData[];
 }
 
-export const JobPosts = ({ jobPosts }: JobPostsProps) => {
-  console.log(jobPosts);
+export const JobPosts = ({ jobPostsData }: JobPostsProps) => {
+  console.log(jobPostsData);
 
   return (
-    <ul className="job-posts">
-      {jobPosts &&
-        jobPosts.map((jobPost: JobPostData) => {
+    <ul className={style.jobPosts}>
+      {jobPostsData &&
+        jobPostsData.map((jobPost: JobPostData) => {
           return (
             jobPost && (
               <JobPost
                 key={jobPost.id + jobPost.company + jobPost.position}
-                jobPost={jobPost}
+                jobPostData={jobPost}
               />
             )
           );
