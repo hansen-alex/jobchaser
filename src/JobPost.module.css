@@ -1,7 +1,7 @@
 .jobPost {
   flex: 1 1 0;
   display: flex;
-  height: 100%;
+  min-height: 16rem;
   padding: 1rem;
   border: 2px solid black;
   border-radius: 1rem;
