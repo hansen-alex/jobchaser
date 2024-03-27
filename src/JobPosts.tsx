@@ -7,8 +7,6 @@ interface JobPostsProps {
 }
 
 export const JobPosts = ({ jobPostsData }: JobPostsProps) => {
-  console.log(jobPostsData);
-
   return (
     <ul className={style.jobPosts}>
       {jobPostsData &&
