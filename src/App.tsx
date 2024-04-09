@@ -4,6 +4,7 @@ import { Loader } from "./Loader.tsx";
 import { JobPostData } from "./data.ts";
 import { JobPosts } from "./JobPosts.tsx";
 import { Searchbar } from "./Searchbar.tsx";
+import { Navbar } from "./Navbar.tsx";
 
 function App() {
   useEffect(() => {
@@ -38,30 +39,33 @@ function App() {
 
   return (
     <>
-      <Searchbar searchTerm={searchterm} onChange={handleSearchbarChange} />
-      {(isLoading && <Loader />) || (
-        <JobPosts
-          jobPostsData={jobsData.filter((job) => {
-            //This is probably really unnecessary and bad but im tired...
-            return (
-              job.position.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.role.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.level.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.company.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.contract.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.location.toLowerCase().includes(searchterm.toLowerCase()) ||
-              job.languages.filter((language) => {
-                return language
-                  .toLowerCase()
-                  .includes(searchterm.toLowerCase());
-              }).length > 0 ||
-              job.tools.filter((tool) => {
-                return tool.toLowerCase().includes(searchterm.toLowerCase());
-              }).length > 0
-            );
-          })}
-        />
-      )}
+      <Navbar />
+      <main>
+        <Searchbar searchTerm={searchterm} onChange={handleSearchbarChange} />
+        {(isLoading && <Loader />) || (
+          <JobPosts
+            jobPostsData={jobsData.filter((job) => {
+              //This is probably really unnecessary and bad but im tired...
+              return (
+                job.position.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.role.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.level.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.company.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.contract.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.location.toLowerCase().includes(searchterm.toLowerCase()) ||
+                job.languages.filter((language) => {
+                  return language
+                    .toLowerCase()
+                    .includes(searchterm.toLowerCase());
+                }).length > 0 ||
+                job.tools.filter((tool) => {
+                  return tool.toLowerCase().includes(searchterm.toLowerCase());
+                }).length > 0
+              );
+            })}
+          />
+        )}
+      </main>
     </>
   );
 }
