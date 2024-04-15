@@ -5,8 +5,8 @@ import RootLayout from "./layouts/RootLayout.tsx";
 import { ErrorPage } from "./routes/ErrorPage.tsx";
 import { HomePage } from "./routes/HomePage.tsx";
 import { JobsPage } from "./routes/JobsPage.tsx";
-import { SignupPage } from "./routes/SignupPage.tsx";
-import { SigninPage } from "./routes/SigninPage.tsx";
+import { SignUpPage } from "./routes/SignUpPage.tsx";
+import { SignInPage } from "./routes/SignInPage.tsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -25,11 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <SignupPage />,
+        element: <SignUpPage />,
       },
       {
         path: "/signin",
-        element: <SigninPage />,
+        element: <SignInPage />,
       },
     ],
   },
