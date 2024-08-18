@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import RootLayout from "./layouts/RootLayout.tsx";
 import { ErrorPage } from "./routes/ErrorPage.tsx";
 import { HomePage } from "./routes/HomePage.tsx";
@@ -8,6 +12,17 @@ import { JobsPage } from "./routes/JobsPage.tsx";
 import { SignUpPage } from "./routes/SignUpPage.tsx";
 import { SignInPage } from "./routes/SignInPage.tsx";
 import "./index.css";
+import { AuthenticationContext } from "./context/AuthenticationContext.tsx";
+
+const ProtectedRoute: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
+  return useContext(AuthenticationContext) ? (
+    children
+  ) : (
+    <Navigate to="/signin" replace />
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -21,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobs",
-        element: <JobsPage />,
+        element: (
+          <ProtectedRoute>
+            <JobsPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/signup",
