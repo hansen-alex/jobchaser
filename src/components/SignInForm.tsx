@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
+import { FirebaseError } from "firebase/app";
 
 interface ISignInForm {
   email: string;
@@ -7,6 +10,8 @@ interface ISignInForm {
 }
 
 export const SignInForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -19,7 +24,14 @@ export const SignInForm = () => {
   });
 
   const formSubmit = (data: ISignInForm) => {
-    console.log("Form Submitted: ", data);
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        //TODO: handle login error messages
+        console.log(error as FirebaseError);
+      });
   };
 
   return (

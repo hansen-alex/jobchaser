@@ -1,20 +1,18 @@
+import { onAuthStateChanged, User } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
+import { auth } from "../firebase.config";
 
-export type User = {
-  username: string | null;
-  email: string | null;
-} | null;
-
-export const AuthenticationContext = createContext<User>(null);
+export const AuthenticationContext = createContext<User | null>(null);
 
 export const AuthenticationProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [user, setUser] = useState<User>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    //TEMP simulate signing in
-    setUser({ username: "Alex", email: "alex@email.com" });
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
   }, []);
 
   return (

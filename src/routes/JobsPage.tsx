@@ -29,7 +29,7 @@ export const JobsPage = () => {
     getJobs();
   }, []);
 
-  const isAuthenticated = useContext(AuthenticationContext) !== null;
+  const isAuthenticated = useContext(AuthenticationContext);
   const [isLoading, setIsLoading] = useState(false);
   const [jobsData, setJobsData] = useState<JobPostData[]>([]);
   const [searchterm, setSearchterm] = useState<string>("");
@@ -42,6 +42,7 @@ export const JobsPage = () => {
 
   return (
     <main>
+      {/*Redirect to sign in if user is not signed in. TODO: make it redirect before loading page if possible!*/}
       {!isAuthenticated && <Navigate to={"/signin"} replace={true} />}
 
       <Searchbar searchTerm={searchterm} onChange={handleSearchbarChange} />

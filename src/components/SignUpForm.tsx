@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FirebaseError } from "firebase/app";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 interface ISignUpForm {
   email: string;
@@ -8,6 +11,8 @@ interface ISignUpForm {
 }
 
 export const SignUpForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -22,7 +27,16 @@ export const SignUpForm = () => {
   });
 
   const formSubmit = (data: ISignUpForm) => {
-    console.log("Form Submitted: ", data);
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        //TODO: handle if email already registered
+        if ((error as FirebaseError).code == "auth/email-already-in-use")
+          console.log("Email already registered");
+        else console.log(error);
+      });
   };
 
   return (
