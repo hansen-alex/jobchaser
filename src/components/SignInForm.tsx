@@ -36,9 +36,11 @@ export const SignInForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(formSubmit)}>
-        <div>
-          <label htmlFor="email">Email:</label>
+      <form className="p-8 bg-gray-500" onSubmit={handleSubmit(formSubmit)}>
+        <div className="flex flex-col pb-2">
+          <label className="text-white" htmlFor="email">
+            Email:
+          </label>
           <input
             id="email"
             type="email"
@@ -53,8 +55,10 @@ export const SignInForm = () => {
           {errors.email && <span>{errors.email.message}</span>}
         </div>
 
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className="flex flex-col pb-6">
+          <label className="text-white" htmlFor="password">
+            Password:
+          </label>
           <input
             id="password"
             type="password"
@@ -69,7 +73,9 @@ export const SignInForm = () => {
           {errors.password && <span>{errors.password.message}</span>}
         </div>
 
-        <button type="submit">Log in</button>
+        <button className="w-full p-2" type="submit">
+          Log in
+        </button>
       </form>
 
       <Link to="/signup">Don't have an account? Sign Up</Link>

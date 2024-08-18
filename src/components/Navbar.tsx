@@ -18,17 +18,21 @@ export const Navbar = () => {
   const isAuthenticated = useContext(AuthenticationContext);
 
   return (
-    <nav className="w-full pb-8">
+    <nav className="w-full pt-8 pb-8 flex flex-row justify-between">
       <h1>
         <Link to={"/"}>Jobchaser&#8482;</Link>
       </h1>
-      <ul>
+      <ul className="flex flex-row space-x-4">
         <li>
           <Link to={"/jobs"}>Jobs</Link>
         </li>
         {isAuthenticated ? (
           <li>
-            <button type="button" onClick={() => handleSignOut(navigate)}>
+            <button
+              className="bg-inherit	font-sans text-base text-[#551A8B] underline"
+              type="button"
+              onClick={() => handleSignOut(navigate)}
+            >
               Sign out
             </button>
           </li>
