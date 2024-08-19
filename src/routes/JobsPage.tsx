@@ -4,6 +4,7 @@ import { Loader } from "../components/Loader.tsx";
 import { JobPostData } from "../types/data.ts";
 import { JobPosts } from "../components/JobPosts.tsx";
 import { Searchbar } from "../components/Searchbar.tsx";
+import { Filters } from "../components/Filters.tsx";
 
 export const JobsPage = () => {
   useEffect(() => {
@@ -39,6 +40,7 @@ export const JobsPage = () => {
   return (
     <main>
       <Searchbar searchTerm={searchterm} onChange={handleSearchbarChange} />
+      <Filters />
       {(isLoading && <Loader />) || (
         <JobPosts
           jobPostsData={jobsData.filter((job) => {
