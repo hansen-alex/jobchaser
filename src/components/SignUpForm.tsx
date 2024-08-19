@@ -47,6 +47,7 @@ export const SignUpForm = () => {
             Email:
           </label>
           <input
+            className="p-1"
             id="email"
             type="email"
             {...register("email", {
@@ -65,6 +66,7 @@ export const SignUpForm = () => {
             Password:
           </label>
           <input
+            className="p-1"
             id="password"
             type="password"
             {...register("password", {
@@ -83,6 +85,7 @@ export const SignUpForm = () => {
             Confirm Password:
           </label>
           <input
+            className="p-1"
             id="confirmPassword"
             type="password"
             {...register("confirmPassword", {
@@ -100,7 +103,9 @@ export const SignUpForm = () => {
           Register
         </button>
       </form>
-      <Link to="/signin">Already have an account? Sign In</Link>
+      <Link to="/signin" className="text-inherit hover:text-inherit">
+        Already have an account? Sign In
+      </Link>
     </>
   );
 };

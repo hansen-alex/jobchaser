@@ -42,6 +42,7 @@ export const SignInForm = () => {
             Email:
           </label>
           <input
+            className="p-1"
             id="email"
             type="email"
             {...register("email", {
@@ -60,6 +61,7 @@ export const SignInForm = () => {
             Password:
           </label>
           <input
+            className="p-1"
             id="password"
             type="password"
             {...register("password", {
@@ -74,11 +76,13 @@ export const SignInForm = () => {
         </div>
 
         <button className="w-full p-2" type="submit">
-          Log in
+          Sign in
         </button>
       </form>
 
-      <Link to="/signup">Don't have an account? Sign Up</Link>
+      <Link to="/signup" className="text-inherit hover:text-inherit">
+        Don't have an account? Sign Up
+      </Link>
     </>
   );
 };

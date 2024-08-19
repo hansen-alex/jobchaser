@@ -18,18 +18,22 @@ export const Navbar = () => {
   const isAuthenticated = useContext(AuthenticationContext);
 
   return (
-    <nav className="w-full pt-8 pb-8 flex flex-row justify-between">
+    <nav className="w-full pt-8 pb-8 flex flex-row justify-between text-[#000000] hover:text-[#000000]">
       <h1>
-        <Link to={"/"}>Jobchaser&#8482;</Link>
+        <Link to={"/"} className="text-inherit hover:text-inherit">
+          Jobchaser&#8482;
+        </Link>
       </h1>
       <ul className="flex flex-row space-x-4">
         <li>
-          <Link to={"/jobs"}>Jobs</Link>
+          <Link to={"/jobs"} className="text-inherit hover:text-inherit">
+            Jobs
+          </Link>
         </li>
         {isAuthenticated ? (
           <li>
             <button
-              className="bg-inherit	font-sans text-base text-[#551A8B] underline"
+              className="bg-inherit	font-sans text-base text-inherit hover:text-inherit underline"
               type="button"
               onClick={() => handleSignOut(navigate)}
             >
@@ -39,10 +43,14 @@ export const Navbar = () => {
         ) : (
           <>
             <li>
-              <Link to={"/signup"}>Sign up</Link>
+              <Link to={"/signup"} className="text-inherit hover:text-inherit">
+                Sign up
+              </Link>
             </li>
             <li>
-              <Link to={"/signin"}>Sign in</Link>
+              <Link to={"/signin"} className="text-inherit hover:text-inherit">
+                Sign in
+              </Link>
             </li>
           </>
         )}
