@@ -16,7 +16,7 @@ export const JobsPage = () => {
       await new Promise((res) => setTimeout(res, 1000)); //Manual delay to test loading state
 
       try {
-        const response = await axios.get("jobchaser/src/assets/data/data.json");
+        const response = await axios.get("jobchaser/data/data.json");
         setJobsData(response.data.jobs);
       } catch (error) {
         // if(axios.isAxiosError(error)) {console.log(error as AxiosError)}
