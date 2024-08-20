@@ -3,7 +3,7 @@
     {
         "id": 1,
         "company": "Photosnap",
-        "logo": "./src/assets/images/photosnap.svg",
+        "logo": "jobchaser/images/photosnap.svg",
         "position": "Senior Frontend Developer",
         "role": "Frontend",
         "level": "Senior",
@@ -16,7 +16,7 @@
     {
         "id": 2,
         "company": "Manage",
-        "logo": "./src/assets/images/manage.svg",
+        "logo": "jobchaser/images/manage.svg",
         "position": "Fullstack Developer",
         "role": "Fullstack",
         "level": "Midweight",
@@ -29,7 +29,7 @@
     {
         "id": 3,
         "company": "Account",
-        "logo": "./src/assets/images/account.svg",
+        "logo": "jobchaser/images/account.svg",
         "position": "Junior Frontend Developer",
         "role": "Frontend",
         "level": "Junior",
@@ -42,7 +42,7 @@
     {
         "id": 4,
         "company": "MyHome",
-        "logo": "./src/assets/images/myhome.svg",
+        "logo": "jobchaser/images/myhome.svg",
         "position": "Junior Frontend Developer",
         "role": "Frontend",
         "level": "Junior",
@@ -55,7 +55,7 @@
     {
         "id": 5,
         "company": "Loop Studios",
-        "logo": "./src/assets/images/loop-studios.svg",
+        "logo": "jobchaser/images/loop-studios.svg",
         "position": "Software Engineer",
         "role": "Fullstack",
         "level": "Midweight",
@@ -68,7 +68,7 @@
     {
         "id": 6,
         "company": "FaceIt",
-        "logo": "./src/assets/images/faceit.svg",
+        "logo": "jobchaser/images/faceit.svg",
         "position": "Junior Backend Developer",
         "role": "Backend",
         "level": "Junior",
@@ -81,7 +81,7 @@
     {
         "id": 7,
         "company": "Shortly",
-        "logo": "./src/assets/images/shortly.svg",
+        "logo": "jobchaser/images/shortly.svg",
         "position": "Junior Developer",
         "role": "Frontend",
         "level": "Junior",
@@ -94,7 +94,7 @@
     {
         "id": 8,
         "company": "Insure",
-        "logo": "./src/assets/images/insure.svg",
+        "logo": "jobchaser/images/insure.svg",
         "position": "Junior Frontend Developer",
         "role": "Frontend",
         "level": "Junior",
@@ -107,7 +107,7 @@
     {
         "id": 9,
         "company": "Eyecam Co.",
-        "logo": "./src/assets/images/eyecam-co.svg",
+        "logo": "jobchaser/images/eyecam-co.svg",
         "position": "Full Stack Engineer",
         "role": "Fullstack",
         "level": "Midweight",
@@ -120,7 +120,7 @@
     {
         "id": 10,
         "company": "The Air Filter Company",
-        "logo": "./src/assets/images/the-air-filter-company.svg",
+        "logo": "jobchaser/images/the-air-filter-company.svg",
         "position": "Front-end Dev",
         "role": "Frontend",
         "level": "Junior",
