@@ -9,8 +9,8 @@ import RootLayout from "./layouts/RootLayout.tsx";
 import { ErrorPage } from "./routes/ErrorPage.tsx";
 import { HomePage } from "./routes/HomePage.tsx";
 import { JobsPage } from "./routes/JobsPage.tsx";
-import { SignUpPage } from "./routes/SignUpPage.tsx";
-import { SignInPage } from "./routes/SignInPage.tsx";
+import { SignUpPage } from "./routes/SignupPage.tsx";
+import { SignInPage } from "./routes/SigninPage.tsx";
 import "./index.css";
 import { AuthenticationContext } from "./context/AuthenticationContext.tsx";
 
