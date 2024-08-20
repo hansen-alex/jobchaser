@@ -1,6 +1,6 @@
 import style from "./JobPosts.module.css";
 import { JobPost } from "./JobPost";
-import { JobPostData } from "./data";
+import { JobPostData } from "../types/data";
 
 interface JobPostsProps {
   jobPostsData: JobPostData[];
