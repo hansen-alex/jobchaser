@@ -1,11 +1,29 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface FilterState {
-    filters: string[];
+    filters: {
+        positions: string[];
+        roles: string[];
+        levels: string[];
+        companies: string[];
+        contracts: string[];
+        locations: string[];
+        languages: string[];
+        tools: string[];
+    };
 }
 
 const initialState: FilterState = {
-    filters: [],
+    filters: {
+        positions: [],
+        roles: [],
+        levels: [],
+        companies: [],
+        contracts: [],
+        locations: [],
+        languages: [],
+        tools: [],
+    }
 }
 
 export const filterSlice = createSlice({
@@ -13,12 +31,12 @@ export const filterSlice = createSlice({
     initialState,
     reducers: {
         toggleFilter: (state, action: PayloadAction<string>) => {
-            if(state.filters.includes(action.payload))
-                state.filters = state.filters.filter(item => item != action.payload);
+            const json = JSON.parse(action.payload) as {"category": "positions" | "roles" | "levels" | "companies" | "contracts" | "locations" | "languages" | "tools", value: string};
+            
+            if(state.filters[json.category].includes(json.value))
+                state.filters[json.category] = state.filters[json.category].filter(item => item != json.value);
             else
-                state.filters.push(action.payload)
-
-            console.log(state.filters);
+                state.filters[json.category].push(json.value);
         }
     },
 });

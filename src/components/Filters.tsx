@@ -7,32 +7,171 @@ export const Filters = () => {
   const filters = useSelector((state: RootState) => state.filters.filters);
 
   return (
-    <div>
-      <button type="button" onClick={() => dispatch(toggleFilter("entry"))}>
+    <div className="flex gap-4 p-4">
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.levels.includes("entry") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "levels",
+                value: "entry",
+              })
+            )
+          )
+        }
+      >
         Entry
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("junior"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.levels.includes("junior") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "levels",
+                value: "junior",
+              })
+            )
+          )
+        }
+      >
         Junior
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("senior"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.levels.includes("senior") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "levels",
+                value: "senior",
+              })
+            )
+          )
+        }
+      >
         Senior
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("frontend"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.roles.includes("frontend") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "roles",
+                value: "frontend",
+              })
+            )
+          )
+        }
+      >
         Frontend
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("backend"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.roles.includes("backend") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "roles",
+                value: "backend",
+              })
+            )
+          )
+        }
+      >
         Backend
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("fullstack"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.roles.includes("fullstack") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "roles",
+                value: "fullstack",
+              })
+            )
+          )
+        }
+      >
         Fullstack
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("contract"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.contracts.includes("contract") ? "bg-gray-500" : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "contracts",
+                value: "contract",
+              })
+            )
+          )
+        }
+      >
         Contract
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("part-time"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.contracts.includes("part time")
+            ? "bg-gray-500"
+            : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "contracts",
+                value: "part time",
+              })
+            )
+          )
+        }
+      >
         Part Time
       </button>
-      <button type="button" onClick={() => dispatch(toggleFilter("full-time"))}>
+      <button
+        className={`p-4 rounded-[12px] text-white cursor-pointer ${
+          filters.contracts.includes("full time")
+            ? "bg-gray-500"
+            : "bg-gray-700"
+        }`}
+        type="button"
+        onClick={() =>
+          dispatch(
+            toggleFilter(
+              JSON.stringify({
+                category: "contracts",
+                value: "full time",
+              })
+            )
+          )
+        }
+      >
         Full Time
       </button>
     </div>
